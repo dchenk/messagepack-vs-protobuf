@@ -21,7 +21,7 @@ Comparing the MessagePack and Protocol Buffers (PB) formats for size and ease of
 
 For just these types of integers, PB turns out to encode many but not all integer values more compactly, that is, values in the ranges: 256-16,383; 65,536-268,435,455; and 4,294,967,296-72,057,594,037,927,935.
 
-Actual messages are not, of course, just variable-length integers: in MessagePack you need a "map key", and in PB you need the field number. Given an PB encoded message, you can't construct a meaningful JSON representation because all object keys would just be the field numbers (as strings); yet MessagePack can inter-operate with JSON using string-type keys to elements in a map/"object".
+Actual messages are not, of course, just variable-length integers: in MessagePack you need a "map key", and in PB you need the field number. Given a PB encoded message, you can't simply construct a meaningful JSON representation because all object keys would just be the field numbers (as strings); yet MessagePack can inter-operate with JSON using string-type keys to elements in a map/"object".
 
 #### Fixed-length Encoded Numbers
 In both the MessagePack and Protocol Buffers formats, you can have 32-bit numbers (e.g., float32) that always take up 5 bytes with the leading byte indicating the type, and 64-bit numbers (e.g., float64), which take a total of 9 bytes.
