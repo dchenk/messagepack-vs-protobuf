@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "main";
+
+message InnerStructB {
+  bool Bool = 1;
+  double Float64 = 2;
+  int32 Int8 = 3;
+  repeated uint64 Uint64s = 4;
+}
+
+message Int32s { repeated int32 ints = 1; }
+
+message StructB {
+  string Str = 1;
+  bytes Slice = 2;
+  map<string, uint32> MapStrUint16 = 3;
+  InnerStructB Inner = 4;
+  uint32 Bt = 5;
+  int32 Int = 6;
+  int64 Int64 = 7;
+  repeated string Strs = 8;
+  repeated int64 SliceI64 = 9;
+  map<string, uint64> MapStrUint64 = 10;
+  repeated StructB Recursive = 11;
+  double Float64 = 12;
+  map<string, Int32s> MapStrSlice = 13;
+  float F32 = 14;
+}
